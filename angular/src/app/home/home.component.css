@@ -1,0 +1,84 @@
+content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-flow: row wrap;
+      }
+  article{
+    position: relative;
+    width: 32%;
+    height: 300px;
+    background: white;
+    margin-bottom: 5.5555em;
+    overflow: hidden;
+  }
+  
+    image{
+      border: 0;
+      width: 250%;
+      height: 250%;
+      transform: scale(.4);
+      transform-origin: top left;
+      }
+
+    article h2{
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      /* background: rgba(0,0,0,.6); */
+      /* height: 280px; */
+      width: 100%;
+      font-size: 1.5;
+      font-weight: bold;
+      line-height: 320px;
+      text-align: center;
+      color: #FFF;
+      text-transform: uppercase;
+      transform: 2s all ease-out;
+  }
+      
+      article h2:hover{
+        background: transparent;
+        color: #cccccc;
+      } 
+  
+      article h2:focus{
+          background: transparent;
+          color: transparent;
+          border-radius: 40px;
+        } 
+
+        .photo {
+            /* height: 250px; */
+            /* margin-bottom: 10px; */
+            object-fit:cover;
+            /* width: 100%; */
+        }
+        
+        .photo {
+            transition: filter .5s ease-in-out;
+            -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+            filter: grayscale(1000%); /* FF 35+ */
+          }
+          
+          .photo:hover {
+            -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+            filter: grayscale(0%); /* FF 35+ */
+          }
+
+@media screen and (min-width : 414px) and (max-width : 1080px){
+
+      
+    article{
+      margin: 2.5555em auto;
+      width: 100%;
+      height: 320px;
+      border-radius: 0}
+      
+      article h2{
+        height: 300px;
+        line-height: 300px}
+     
+    }

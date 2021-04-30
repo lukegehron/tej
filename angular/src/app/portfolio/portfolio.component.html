@@ -1,0 +1,116 @@
+<div>
+
+    <div style="position: absolute;  width:100%; left:0px; margin: 0 auto; max-width: 66.666em;">
+
+        <input type="text"
+            style="position: absolute; left:17%; width: 40%; height: 25px; border-radius: 5px; border: .5px solid lightgray"
+            width="50vw" placeholder=" Filter by Tag. (New Construction, Multi Family Housing, etc)" [(ngModel)]="filter"> &nbsp;
+        <button
+            style=" position: absolute; left:60%; width:23%; height: 25px;  border-radius: 5px; border: none; background-color: #2b82cb; color: white;"
+            (click)="enterFilter(filter)">Search</button>
+    </div>
+    <br><br><br>
+    <div class="map-frame" style="z-index: 1;">
+        <div id="map" style="z-index: 1;"></div>
+    </div>
+    <br>
+    <div style="position: absolute;  width:100%; left:0px; margin: 0 auto; max-width: 66.666em">
+        <button
+            style="position: absolute; width:66%; height: 25px; left:17%; border-radius: 5px; border: none; background-color: #2b82cb; color: white;"
+            (click)="getLocation()">Find Closest Project to my Current Location</button>
+
+    </div>
+
+    <div class="container">
+
+
+
+
+        <div *ngFor="let item of dataToShow" class="polaroid">
+            <button (click)="setValue(item)"
+                style="width: 100%; height:100%; background-color: white; cursor: pointer; border:none">
+                <img class="photo" src="./assets/{{item.headerImage}}" width='100' height='100' />
+                <div class="capition" style="margin:auto">
+
+                    <h2>{{ item.title }}</h2>
+
+                    <p style="margin-bottom: 2px;"> {{ item.place }}</p>
+
+                    <div id="tags-holder" class="row"
+                        style="height:60px; margin: auto; margin-bottom: 10px; text-align: center; width: 100%;">
+                        <h4 *ngFor="let tag of item.tags"
+                            style="text-align: center; height: 20px; font-size: 10px; padding:10px">{{tag}}</h4>
+                    </div>
+
+                </div>
+            </button>
+        </div>
+
+
+
+
+        <div id="popup-holder" class="row relative shadow-no-hover"
+            style="position: fixed; left:15vw; top:10vh; width: 70vw; height: 80vh; visibility: hidden; z-index: 5;">
+            <button
+                style="width: 30px; height: 30px; border-radius: 40px; font-size: 10px; font-weight: 700; border-width: 2px; margin: 6px;"
+                (click)="close()">X</button>
+            <div id="content-left" class="column hide-scrollbar relative">
+                <!---->
+                <div class="column hide-scrollbar">
+                    <!----> <img src="./assets/{{currentDataItem.headerImage}}" class="row full-image">
+
+                    <img *ngFor="let img of currentDataItem.otherImages" src="./assets/{{img}}" class="row full-image">
+                    <!---->
+                </div>
+            </div>
+            <div id="content-right" class="column relative hide-scrollbar">
+                <!---->
+                <div class="column hide-scrollbar">
+
+                    <div class="row row-holder">
+                        <h1 style="height: fit-content; width: 100%;">{{currentDataItem.title}}</h1>
+
+                    </div>
+                    <h2 style="text-align: center; margin: auto;">{{currentDataItem.completion}}</h2>
+
+
+                    <div id="tags-holder" class="row">
+
+                        <h4 *ngFor="let tag of currentDataItem.tags">{{tag}}</h4>
+
+                    </div>
+                    <div class="info-holder column">
+                        <h5>{{currentDataItem.place}}</h5>
+
+                        <div class="info-holder column">
+
+                            <ul>
+                                <p *ngFor="let desc of currentDataItem.description">
+                                    <li>{{desc}}</li>
+                                </p>
+                            </ul>
+
+
+                        </div>
+                        <h5 *ngIf="currentDataItem.cost">Cost: ${{currentDataItem.cost}}</h5>
+                        <br>
+                        <h5>Design Challenge</h5>
+                        <div class="info-holder column">
+                            <p style="font-size: small;">{{currentDataItem.designChallenge}}</p>
+                        </div>
+
+                        <h5>Design Approach</h5>
+                        <div class="info-holder column">
+                            <p style="font-size: small;">{{currentDataItem.designApproach}}</p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>

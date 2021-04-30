@@ -1,0 +1,354 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+	font-family: 'Roboto', sans-serif; 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.container	{
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	margin: 0 auto;
+	max-width: 1170px;
+	padding: 20px;
+    /* background-color: #eeeeee; */
+}
+
+.polaroid {
+	/* background: #ffffff;
+	padding: 15px 15px 0px;
+    border-radius: 15px; */
+    /* background: #F9F9F9; */
+  padding: 25px;
+  margin: 3vh 0;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.05), 0 5px 5px 0 rgba(0, 0, 0, 0.08 );
+}
+
+.photo {
+	height: 250px;
+	margin-bottom: 10px;
+	object-fit:cover;
+	width: 100%;
+}
+
+.photo {
+    transition: filter .5s ease-in-out;
+    -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(1000%); /* FF 35+ */
+  }
+  
+  .photo:hover {
+    -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(0%); /* FF 35+ */
+  }
+
+h2 {
+	font-size: 1.5rem;
+}
+
+p {
+	font-size: 0.8rem;
+}
+
+
+
+
+#popup-holder {
+    font-size: 18px;
+    font-family: 'Arial Regular';
+display: -webkit-flex;
+flex-direction: row;
+flex-shrink: 0;
+position: relative;
+box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.2);
+background-color: white;
+border-radius: 8px;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .hide-scrollbar{
+-ms-overflow-style: none !important;  /* IE and Edge */
+scrollbar-width: none !important;  /* Firefox */
+  }
+
+.x-button{
+     
+    user-select: none;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    position: absolute !important;
+    width: 20px;
+    height: 20px;
+    right: -35px;
+    top: 5px;
+}
+
+#content-left{
+     
+    display: -webkit-flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    position: relative;
+    width: 61%;
+    margin: 2px 0px;
+    margin-left: 1px;
+    height: 100%;
+    overflow: scroll;
+}
+
+#content-right{
+     
+    display: -webkit-flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    position: relative;
+    margin: 0 auto;
+    height: 99%;
+    border-top-right-radius: 8px;
+    overflow: scroll;
+    width: 30%;
+}
+
+.hide-scrollbar{
+     
+    display: -webkit-flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.full-image{
+     
+    user-select: none;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    height: auto;
+    width: 100%;
+    cursor: pointer;
+    padding: 2px 1px;
+    padding-top: 0px;
+    border-top-left-radius: 8px;
+}
+
+.row{
+     
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    position: relative;
+    width: 100%;
+    margin: 8px 0px;
+    margin-bottom: -5px;
+    margin-top: 35px;
+}
+
+#tags-holder{
+ 
+     
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    margin: 42px auto;
+    width: 103%;
+    margin-left: -1.5%;
+    margin-bottom: 30px;
+}
+
+#tags-holder h4{
+    font-family: 'Arial Regular';
+    color: #7A7A7A;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    padding: 15px 14px;
+    margin: 5px 4px;
+    line-height: 0px;
+    background-color: #F4F4F4;
+    border-radius: 100px;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+.info-holder{
+     
+    display: -webkit-flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin-bottom: 10px;
+    width: 96%;
+    margin-left: 2%;
+}
+
+.main-row{
+     
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    justify-content: space-between;
+    margin: 2px 0px 0px 0px;
+}
+
+p{
+    font-family: 'Arial Regular';
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+    font-size: 13px;
+    color: #222222;
+    line-height: 155%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+
+h5{
+    font-family: 'Arial Regular';
+    line-height: 12.5px;
+    text-transform: uppercase;
+    color: #A7A7A7;
+    font-size: 17px;
+    letter-spacing: 1px;
+    margin: auto 0;
+    padding: 0;
+    font-weight: 100;
+    margin-bottom: 6px;
+}
+
+h1{
+    font-family: 'Arial Regular';
+    letter-spacing: 0.5px;
+    padding: 0;
+    color: #222222;
+    font-size: 35px;
+    margin: 10px 0px;
+    /* white-space: nowrap; */
+    text-align: center;
+    font-weight: 100;
+}
+
+h2{
+    padding: 0;
+    color: #A7A7A7;
+    font-size: 15px;
+    letter-spacing: 0.75px;
+    margin: auto 25px;
+    white-space: nowrap;
+    font-weight: 300;
+    font-family: 'Arial Light';
+}
+
+#atmos-sidebar-outer-container{
+     
+    display: inline-block;
+    position: absolute;
+    height: 100vh;
+    margin-top: -61px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, .2);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.plan-card-container{
+     
+    flex-shrink: 0;
+    background-color: #F6F6F6;
+    height: 100vh;
+    width: calc(100vw - 280px);
+    box-sizing: border-box;
+    padding-right: 3vw;
+    padding-left: 3vw;
+    padding-top: 72px;
+    padding-bottom: 170px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    float: right;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#multi-container{
+     
+    width: 220px;
+    height: auto;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 20px;
+    right: 310px;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+#atmost-sidebar-inner-container{
+     
+    margin-top: 61px;
+    pointer-events: all;
+}
+
+#container{
+    font-size: 18px;
+    pointer-events: all;
+    font-family: 'Arial Regular';
+    width: 280px;
+    float: left;
+    height: 100vh;
+    background-color: white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+
+.small-images-row{
+     
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-shrink: 0;
+}
+
+.floorplan-padding{
+     
+    user-select: none;
+    padding: 10px 1.25% !important;
+    width: 45% !important;
+    height: 300px;
+    max-width: 50%;
+    margin: auto;
+    cursor: pointer;
+}
+
+.map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 30px;
+  }
+  
+  .map-frame {
+    border: 0.5px solid lightgray;
+    height: 300px;
+    width: 95%;
+    margin: auto;
+  }
+  
+  #map {
+    height: 100%;
+  }

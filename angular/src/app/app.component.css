@@ -1,0 +1,94 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,500);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  margin-top: 4.1666em; 
+  font-size: 18px;
+  background: #202020;
+  
+}
+
+.container{
+  position: relative;
+  margin: 0 auto;
+  max-width: 66.6666em;
+  padding: 5.5555em;
+  background: white;
+  }
+h3{
+  position: absolute;
+  top: -1.75em;
+  left: 0px;
+  color: #ecf0f1;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5em;
+  }
+header {
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 5.5555em;
+}
+  
+  header h1{
+    font-size: 4em;
+}
+    
+  header h2{
+    font-size: 3.5em;
+    color: #8F8F8F;
+}
+
+
+    
+footer{
+  text-align: center}
+  
+  footer h2{
+    font-family: 'Roboto', sans-serif;
+    color: #bdc3c7;
+    font-size: 1em;
+    transition: .2s color ease-in-out;
+}
+    
+    footer h2:hover{
+      color: #2b82cb
+    }
+
+    footer h2:focus{
+        color: #FF0A6C 
+    }
+  footer ul {
+    margin: 1.25em 0 0 0  }
+    
+  footer li{  
+    display: inline;
+    list-style-type: none;
+    font-size: 1.25em;
+    margin-right: 1em;
+    color: #bdc3c7;
+    font-size: 1em;
+    transition: .2s color ease-in-out;
+}
+    
+    footer li:hover{
+      color: #2b82cb
+    }
+    
+    h2:hover{
+        color: #2b82cb
+    }
+@media screen and (min-width : 414px) and (max-width : 1080px){
+  body{
+    margin: 4em 2em}
+    
+  header {
+    margin-bottom: 0}
+    
+  
+  }
+ 
